@@ -51,6 +51,30 @@ camino([Set | Lista], Letra):-
 Una vez se recorre toda la lista y queda vacía, el programa cae en un caso base donde checa el estado donde termino con el estado final, si es el mismo entregará un valor booleano ```true .``` de lo contrario entregara ```false.```
 
 ### Complejidad
-Al ser recursivo se puede saber que su complejidad es O(n) ya que se debe recorrer n cantidad de veces siendo n la longitud de la lista entregada
+Al ser recursivo se puede saber que su complejidad es **O(n)** ya que se debe recorrer n cantidad de veces siendo n la longitud de la lista entregada
 
 ## Algoritmo Expresión Regular
+Para el algoritmo de la expresión regular se realizó en python aprovechando la biblioteca de "Regular Expressions" llamada "re", con esta biblioteca se pueden utilizar funciones como ```re.match()``` que permite revisar una secuencia de caracteres dado un patron.
+De esta manera generé una función que permita revisar los strings de caracteres y regrese una expresión booleana, así pudé realizar varias pruebas de forma rápida.
+``` Python
+def test (prueba):
+    if re.match(patron, prueba):
+        return True
+    else:
+        return False
+```
+### Complejidad
+Igual que el caso anterior es una complejidad de **O(n)** ya que se revisan n caracteres dependiendo de la longitud de la cadena entregada.
+
+## Pruebas
+Las pruebas de las expresiones regulares se encuentran el archivo ```expresionRegular.py``` así como el algoritmo
+Para el automata las pruebas se encuentran en el archivo ```pruebasAutomata.pl``` y se debe correr el algoritmo ```automata.pl``` por separado. la forma correcta para verificar estas pruebas es correr el archivo del algoritmo de la siguiente forma en la carpeta donde se encuentra:
+```
+swipl automata.pl
+```
+Ya en consola se puede copiar del archivo de pruebas y pegar en consola con click izquierdo, se debe ver de la siguiente forma:
+```Prolog
+1 ?- inicio([0,1,2,1,0,0,0,1,1,0,0,1,2,1,2,1,2,0,1,1,1]).
+```
+
+## Referencias
