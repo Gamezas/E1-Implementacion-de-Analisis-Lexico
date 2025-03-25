@@ -18,7 +18,7 @@ En este primer diseño se buscó dar prioridad a la segunda regla del lenguaje, 
 ### Segundo diseño
 Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transiciónar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.
 Finalmente se consiguió este diseño:
-![Automata evidence 1](automata2.jpeg)
+![Automata evidence 2](automata2.jpeg)
 
 ## Expresión regular
 Así mismo se diseño una expresión regular que permitiera solucionar el problema como el autonomapor medio de la lectura de caracteres y restricciones en el mismo
@@ -37,3 +37,20 @@ Con ayuda de los "Assertions" se pudo simplificar de gran manera la expresión r
 ```
 
 ## Algoritmo Automata
+Para el algoritmo del automata se decidió que se realizara de forma recursiva, de esta forma sería más fácil recorrer la lista completa y solamente detectar el estado final, si es "d" significa que es válido si es cualquier otro significa que no es válida la secuencia.
+Se coloco "d" como un caso base con este propósito en mente
+``` Prolog
+estado_final(d).
+```
+Para comenzar el sistema se entrega una lista al sistema como por ejemplo ```[0,1,2,1,0,0,0,1,1,0,0,1,2,1,2,1,2,0,1,1,1]``` por medio de la función ```inicio```, ya que aquí se indica que el automata iniciará desde el estado "a" como lo indica el diagrama, después se llama la función recursiva.
+``` Prolog
+camino([Set | Lista], Letra):-
+    route(Letra,Set,X),
+    camino(Lista,X).
+```
+Una vez se recorre toda la lista y queda vacía, el programa cae en un caso base donde checa el estado donde termino con el estado final, si es el mismo entregará un valor booleano ```true .``` de lo contrario entregara ```false.```
+
+### Complejidad
+Al ser recursivo se puede saber que su complejidad es O(n) ya que se debe recorrer n cantidad de veces siendo n la longitud de la lista entregada
+
+## Algoritmo Expresión Regular
