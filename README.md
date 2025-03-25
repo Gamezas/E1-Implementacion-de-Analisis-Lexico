@@ -12,13 +12,13 @@ Para este proyecto se ha elegido un lenguaje de tipo matemático el cuál tiene 
 Para solucionar y generar el algortimo que verifique la cadena, se diseñó un automata para vizualizar los dieferentes estados por lo que podría pasar y poder entender y diseñar de forma eficiente el algoritmo más adelante en prolog.
 ### Primer diseño
 El primer diseño diagrama del automata es el siguiente:
-[imagen]
+![Automata evidence 1](automata1.jpeg)
 En este primer diseño se buscó dar prioridad a la segunda regla del lenguaje, de ahí se añadieron rutas que faciliten la trancisión entre todos los posbles estados y se integró el estado "h" en el que la única forma para llegar es incumplir la tercera regla.
 
 ### Segundo diseño
 Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transiciónar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.
 Finalmente se consiguió este diseño:
-[imagen2]
+![Automata evidence 1](automata2.jpeg)
 
 ## Expresión regular
 Así mismo se diseño una expresión regular que permitiera solucionar el problema como el autonomapor medio de la lectura de caracteres y restricciones en el mismo
