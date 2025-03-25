@@ -3,20 +3,20 @@
 ## Alejandro Adrián García Martínez
 
 ## Descripción
-Para este proyecto se ha elegido un lenguaje de tipo matemático el cuál tiene las siguientes reglas:
+Para este proyecto se ha elegido un lenguaje de tipo matemático el cuál tiene las siguientes reglas:  
 1. Los únicos carácteres en el lenguaje son 0, 1 y 2.
 2. La cadena debe terminar con 111 o con 122.
-3. La cadena no puede tener en ningún momento 211, de lo contrario no será válido.
+3. La cadena no puede tener en ningún momento 211, de lo contrario no será válido.  
 
 ## Autómata
 Para solucionar y generar el algortimo que verifique la cadena, se diseñó un automata para vizualizar los dieferentes estados por lo que podría pasar y poder entender y diseñar de forma eficiente el algoritmo más adelante en prolog.
 ### Primer diseño
-El primer diseño diagrama del automata es el siguiente:
+El primer diseño diagrama del automata es el siguiente:  
 ![Automata evidence 1](automata1.jpeg)
 En este primer diseño se buscó dar prioridad a la segunda regla del lenguaje, de ahí se añadieron rutas que faciliten la trancisión entre todos los posbles estados y se integró el estado "h" en el que la única forma para llegar es incumplir la tercera regla.
 
 ### Segundo diseño
-Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transicionar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.
+Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transicionar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.  
 Finalmente se consiguió este diseño:
 ![Automata evidence 2](automata2.jpeg)
 
@@ -37,7 +37,7 @@ Con ayuda de los "Assertions" se pudo simplificar de gran manera la expresión r
 ```
 
 ## Algoritmo Automata
-Para el algoritmo del automata se decidió que se realizara de forma recursiva, de esta forma sería más fácil recorrer la lista completa y solamente detectar el estado final, si es "d" significa que es válido si es cualquier otro significa que no es válida la secuencia.
+Para el algoritmo del automata se decidió que se realizara de forma recursiva, de esta forma sería más fácil recorrer la lista completa y solamente detectar el estado final, si es "d" significa que es válido si es cualquier otro significa que no es válida la secuencia.  
 Se coloco "d" como un caso base con este propósito en mente
 ``` Prolog
 estado_final(d).
@@ -54,7 +54,7 @@ Una vez se recorre toda la lista y queda vacía, el programa cae en un caso base
 Al ser recursivo se puede saber que su complejidad es **O(n)** ya que se debe recorrer n cantidad de veces siendo n la longitud de la lista entregada
 
 ## Algoritmo Expresión Regular
-Para el algoritmo de la expresión regular se realizó en python aprovechando la biblioteca de "Regular Expressions" llamada "re", con esta biblioteca se pueden utilizar funciones como ```re.match()``` que permite revisar una secuencia de caracteres dado un patron.
+Para el algoritmo de la expresión regular se realizó en python aprovechando la biblioteca de "Regular Expressions" llamada "re", con esta biblioteca se pueden utilizar funciones como ```re.match()``` que permite revisar una secuencia de caracteres dado un patron.  
 De esta manera generé una función que permita revisar los strings de caracteres y regrese una expresión booleana, así pudé realizar varias pruebas de forma rápida.
 ``` Python
 def test (prueba):
@@ -67,8 +67,9 @@ def test (prueba):
 Igual que el caso anterior es una complejidad de **O(n)** ya que se revisan n caracteres dependiendo de la longitud de la cadena entregada.
 
 ## Pruebas
-Las pruebas de las expresiones regulares se encuentran el archivo ```expresionRegular.py``` así como el algoritmo
-Para el automata las pruebas se encuentran en el archivo ```pruebasAutomata.pl``` y se debe correr el algoritmo ```automata.pl``` por separado. la forma correcta para verificar estas pruebas es correr el archivo del algoritmo de la siguiente forma en la carpeta donde se encuentra:
+Las pruebas de las expresiones regulares se encuentran el archivo ```expresionRegular.py``` así como el algoritmo.  
+Para el automata las pruebas se encuentran en el archivo ```pruebasAutomata.pl``` y se debe correr el algoritmo ```automata.pl``` por separado.   
+La forma correcta para verificar estas pruebas es correr el archivo del algoritmo de la siguiente forma en la carpeta donde se encuentra:
 ```
 swipl automata.pl
 ```
