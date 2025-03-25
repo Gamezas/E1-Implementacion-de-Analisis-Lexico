@@ -78,6 +78,6 @@ Ya en consola se puede copiar del archivo de pruebas y pegar en consola con clic
 ```
 
 ## Referencias
-Child, D. (2020). Regular Expressions Cheat Sheet. Recuperado de: https://cheatography.com/davechild/cheat-sheets/regular-expressions/
-Frank, E. (s.f.). Formal Language Theory. pp 94 - 112. [PDF]
+Child, D. (2020). Regular Expressions Cheat Sheet. Recuperado de: https://cheatography.com/davechild/cheat-sheets/regular-expressions/ \n
+Frank, E. (s.f.). Formal Language Theory. pp 94 - 112. [PDF] \n
 Tejedor, J. (2020). Introducción a expresiones regulares. Recuperado de: https://www.acceseo.com/introduccion-a-expresiones-regulares.html
