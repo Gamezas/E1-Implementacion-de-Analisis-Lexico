@@ -16,15 +16,15 @@ El primer diseño diagrama del automata es el siguiente:
 En este primer diseño se buscó dar prioridad a la segunda regla del lenguaje, de ahí se añadieron rutas que faciliten la trancisión entre todos los posbles estados y se integró el estado "h" en el que la única forma para llegar es incumplir la tercera regla.
 
 ### Segundo diseño
-Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transiciónar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.
+Para el segundo diseño del diagrama se contempló la posibilidad de que la cadea pueda transicionar en el estado "d" o estado final y no necesariamente terminar ahí, de esta forma evitar que en un punto se coloque 111 o 122 y que el automata lo cuente como correcto incumpliendo la segunda o incluso la tercera regla.
 Finalmente se consiguió este diseño:
 ![Automata evidence 2](automata2.jpeg)
 
 ## Expresión regular
-Así mismo se diseño una expresión regular que permitiera solucionar el problema como el autonomapor medio de la lectura de caracteres y restricciones en el mismo
+Así mismo se diseño una expresión regular que permitiera solucionar el problema como el automata por medio de la lectura de caracteres y restricciones en el mismo
 
 ### Primer diseño
-En el primer diseño se busco principalmente la pprhibición de que se rompa la tecercera regla del lenguaje, por lo que rápidamente se volió muy restringido como se pede ver a continuación:
+En el primer diseño se busco principalmente la prohibición de que se rompa la tecercera regla del lenguaje, por lo que rápidamente se volió muy restringido como se pede ver a continuación:
 ```
 /(0|1|2)?((0|2)?|(00|01|02|10|20)?)+(111|122)$/gm
 ```
@@ -78,3 +78,6 @@ Ya en consola se puede copiar del archivo de pruebas y pegar en consola con clic
 ```
 
 ## Referencias
+Child, D. (2020). Regular Expressions Cheat Sheet. Recuperado de: https://cheatography.com/davechild/cheat-sheets/regular-expressions/
+Frank, E. (s.f.). Formal Language Theory. pp 94 - 112. [PDF]
+Tejedor, J. (2020). Introducción a expresiones regulares. Recuperado de: https://www.acceseo.com/introduccion-a-expresiones-regulares.html
