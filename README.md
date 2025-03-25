@@ -4,4 +4,4 @@
 
 ## Descripción
 Para este proyecto se ha elegido un lenguaje de tipo matemático
-^(?!.*211)[012]*(111|122)$
+
