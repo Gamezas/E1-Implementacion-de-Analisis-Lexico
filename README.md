@@ -21,7 +21,11 @@ Finalmente se consiguió este diseño:
 ![Automata evidence 2](automata2.jpeg)
 
 ### Diseño final
-Para el diseño final se descubrió que en el anterior diseño se podía colocar el valor 211 después de engañar al automata al llevarlo al final con una cadena de caracteres que termine en 122 para aprovehcar el bucle infinito de
+Para el diseño final se descubrió que en el anterior diseño se podía colocar el valor 211 después de engañar al automata al llevarlo al final con una cadena de caracteres que termine en 122 para aprovehcar el bucle infinito de "1" diseñado para cadenas que utilicen muchos 1 con secutivos al final.
+
+Para resolver esto se implemento un nuevo estado final para la secuencia 122 de esta forma, el primer estado final, queda únicamente reservado a secuencias que concluyan unicamente en 111, así se puede prevenir el uso de 122 para engañar al automata, también se designo un nodo que se encargue de gestionar todos los cambios de estado relacionados con 2.
+
+![Automata evidence 3](automata3.png)
 
 ## Expresión regular
 Así mismo se diseño una expresión regular que permitiera solucionar el problema como el automata por medio de la lectura de caracteres y restricciones en el mismo
