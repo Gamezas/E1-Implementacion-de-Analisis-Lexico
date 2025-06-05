@@ -23,7 +23,7 @@ Finalmente se consiguió este diseño:
 ### Diseño final
 Para el diseño final se descubrió que en el anterior diseño se podía colocar el valor 211 después de engañar al automata al llevarlo al final con una cadena de caracteres que termine en 122 para aprovehcar el bucle infinito de "1" diseñado para cadenas que utilicen muchos 1 con secutivos al final.
 
-Para resolver esto se implemento un nuevo estado final para la secuencia 122 de esta forma, el primer estado final, queda únicamente reservado a secuencias que concluyan unicamente en 111, así se puede prevenir el uso de 122 para engañar al automata, también se designo un nodo que se encargue de gestionar todos los cambios de estado relacionados con 2.
+Para resolver esto se implemento un nuevo estado final para la secuencia 122 de esta forma, el primer estado final, queda únicamente reservado a secuencias que concluyan en 111, así se puede prevenir el uso de 122 para engañar al automata, también se designo un nodo que se encargue de gestionar todos los cambios de estado relacionados con 2 que es el nodo número 2. También se Diseño el nodo "j", el cuál es el encargado de gestionar las salidas del nuevo nodo final "f", esta forma si hay más caracteres después de un 122 en la secuencia, no se necesita recurrir a un blucle dentro del nodo final que pueda permitir cadenas incorrectas, si no que esta responsabilidad se le designa a un nodo especial que permite conexiones con el resto del automata.
 
 ![Automata evidence 3](automata3.png)
 
@@ -48,6 +48,7 @@ Para el algoritmo del automata se decidió que se realizara de forma recursiva, 
 Se coloco "d" como un caso base con este propósito en mente
 ``` Prolog
 estado_final(d).
+estado_final(f).
 ```
 Para comenzar el sistema se entrega una lista al sistema como por ejemplo ```[0,1,2,1,0,0,0,1,1,0,0,1,2,1,2,1,2,0,1,1,1]``` por medio de la función ```inicio```, ya que aquí se indica que el automata iniciará desde el estado "a" como lo indica el diagrama, después se llama la función recursiva.
 ``` Prolog
@@ -58,7 +59,11 @@ camino([Set | Lista], Letra):-
 Una vez se recorre toda la lista y queda vacía, el programa cae en un caso base donde checa el estado donde termino con el estado final, si es el mismo entregará un valor booleano ```true .``` de lo contrario entregara ```false.```
 
 ### Complejidad
-Al ser recursivo se puede saber que su complejidad es **O(n)** ya que se debe recorrer n cantidad de veces siendo n la longitud de la lista entregada
+Al tener que recorrer la lista de caracteres según el elemento dado hasta vaciar la lista se puede entender que la función principal del algoritmo es de ```O(n)```, ya que tiene que recorrer "n" cantidad de veces la lista para conocer el nuevo estado del automata. también no escala a ```O(n²)``` ya que al entregar la nueva lista por medio de recursividad se elimina el elemento revisado, por lo que al llamarse a si misma mantiene su complejidad ```O(n)```.
+
+En cuanto a las demás funciones, solo sirven como axuliar para permitir la interacción con el algoritmo de una forma más sencilla, por lo que son ```O(1)```.
+
+Con todo esto en mente se puede definir que la complejidad final es de ```O(n)``` en el caso promedio y en el peor caso y ```O(1)``` en el mejor, dada la situación que en la cadena entregada haya solo un número y que este sea el primero en la lista es decir 0.
 
 ## Algoritmo Expresión Regular
 Para el algoritmo de la expresión regular se realizó en python aprovechando la biblioteca de "Regular Expressions" llamada "re", con esta biblioteca se pueden utilizar funciones como ```re.match()``` que permite revisar una secuencia de caracteres dado un patron.  
