@@ -78,6 +78,13 @@ def test (prueba):
 ### Complejidad
 Igual que el caso anterior es una complejidad de ```O(n)``` ya que en este caso "n" es la cantidad de valores en la cadena que serán revisado para conocer si la cadena completa cumple las reglas establecidas.
 
+## Reguex vs Prolog
+Como ya se ha analizado ambos scripts previamente, la complejidad de ambos es igual, por lo que alos dos son opciones viables para la solución de este problema de análisis léxico, en este punto radica la simpleza de la solución. Considero yo que por su mayor flexibilidad regex es una opción mejor.
+
+Si bien el automata en prolog es bastante funcional y es cómodo, en el momento de cometer un error en su diseño, se debía en la mayoría de ocaciones volver a trabajar el automata desde 0 con un nuevo punto de vista. En regex esto no sucede, ya que solo se colocan las reglas a seguir y da más flexible a como se escriben dichas reglas, de forma en que llega a ser mucho más limpio de trabajar.
+
+Concluyo que regex es una opción más viable por su sencillez y felxibilidad, así como su facilidad en corregir errores, en comparación del automata de prolog a pesar de compartir la misma complejidad.
+
 ## Pruebas
 Las pruebas de las expresiones regulares se encuentran el archivo ```expresionRegular.py``` así como el algoritmo.  
 Para el automata las pruebas se encuentran en el archivo ```pruebasAutomata.pl``` y se debe correr el algoritmo ```automata.pl``` por separado.   
