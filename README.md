@@ -20,6 +20,9 @@ Para el segundo diseño del diagrama se contempló la posibilidad de que la cade
 Finalmente se consiguió este diseño:
 ![Automata evidence 2](automata2.jpeg)
 
+### Diseño final
+Para el diseño final se descubrió que en el anterior diseño se podía colocar el valor 211 después de engañar al automata al llevarlo al final con una cadena de caracteres que termine en 122 para aprovehcar el bucle infinito de
+
 ## Expresión regular
 Así mismo se diseño una expresión regular que permitiera solucionar el problema como el automata por medio de la lectura de caracteres y restricciones en el mismo
 
