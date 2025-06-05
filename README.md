@@ -76,7 +76,7 @@ def test (prueba):
         return False
 ```
 ### Complejidad
-Igual que el caso anterior es una complejidad de **O(n)** ya que se revisan n caracteres dependiendo de la longitud de la cadena entregada.
+Igual que el caso anterior es una complejidad de ```O(n)``` ya que en este caso "n" es la cantidad de valores en la cadena que serán revisado para conocer si la cadena completa cumple las reglas establecidas.
 
 ## Pruebas
 Las pruebas de las expresiones regulares se encuentran el archivo ```expresionRegular.py``` así como el algoritmo.  
